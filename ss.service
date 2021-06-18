@@ -3,7 +3,8 @@ Description=Shadowsocks Server
 After=network.target
 
 [Service]
-Restart=on-abnormal
+Restart=always
+RestartSec=20
 ExecStart=nohup /snap/bin/shadowsocks-libev.ss-server -c /snap/bin/config.json > /dev/null 2>&1
 
 [Install]
